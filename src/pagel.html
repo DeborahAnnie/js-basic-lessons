@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms </title>
+</head>
+
+<body>
+    <form name="myForm" action="pagei.html">
+        <p>Name:<input placeholder="Enter name" name="name" type="text" size="30"></p>
+        <p>Email:<input placeholder="Enter email address" name="email" type="email" size="30"></p>
+        <p>Age:<input placeholder="Enter age" name="age" type="text" size="4" value="0"></p>
+        <p>Job:<select title="joblist" name="job">
+                <option>--- Select One ---
+                <option value="student">Student</option>
+                <option value="businessperson">Business Person</option>
+            </select>
+        <p><input type="submit" value="Send!" onClick="checkForm(); return false;"></p>
+        <p><button type="button" onClick="openWindow()">B1</button>
+        </p>
+    </form>
+    <script type="text/javascript">
+        function checkForm() {
+            var formName = document.myForm.name;
+            var formEmail = document.myForm.email;
+            var formAge = document.myForm.age;
+            var formJob = document.myForm.job;
+            if (formName.value.indexOf(" ") == - 1) {
+                alert("please enter your full name.");
+                formName.focus();
+                return;
+            }
+            if (formEmail.value.indexOf("@") == - 1 || formEmail.value.indexOf(".") == -1) {
+                alert("please enter valid email address.");
+                formEmail.focus();
+                return;
+            }
+            let formAgeValue = parseInt(formAge.value);
+            if (formAgeValue < 8 || formAgeValue > 58) {
+                alert("Age must be between 8 and 58!");
+                formAge.focus();
+                return;
+            }
+            if (formJob.selectedIndex == 0) {
+                alert("Please select your job from the list.");
+                formJob.focus();
+                return;
+            }
+            document.myForm.submit();
+        }
+        function openWindow() {
+            myWindow = window.open("pagek.html", "page2", "height=300,width=400");
+        }
+    </script>
+</body>
+
+</html>

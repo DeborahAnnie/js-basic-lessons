@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page j</title>
+</head>
+
+<body>
+    <div id='max'></div>
+    <p></p>
+    <div id='min'></div>
+
+    <script type="text/javascript">
+        document.getElementById('max').innerHTML = `Max:${Number.MAX_VALUE}`;
+        document.getElementById('min').innerHTML = `Min:${Number.MIN_VALUE}`;
+        const x = 100;
+        let s1 = 'hello';
+        let result = x / s1;
+        document.writeln(`<p>result ${result}`);
+        //isNaN(not a number) is an inbuilt func always return either true or false
+        document.writeln(`<p>isNaN(x/s1) ${isNaN(x / s1)}</p>`);
+
+        const y = 0;
+        const z = x / y;
+        document.writeln(`<p>z= ${z}</p>`);//infinity is a valid data in js and it is a numerical data.
+
+        s1 = null;
+        document.writeln(`<p>s1=${s1}</p>`);
+        function checkNull_Undefined(sayThis) {
+            if (sayThis === undefined) {
+                //check to see if this is undefined
+                //if it was,then give it a default value 
+                sayThis = 'Value is Undefined';
+            } else if (sayThis === null) {
+                sayThis = 'The value is Null';
+            }//End check
+            console.log(sayThis);//toss up the alert
+        }
+        checkNull_Undefined(s1);
+        let s2;
+        checkNull_Undefined(s2);
+    </script>
+</body>
+
+</html>
