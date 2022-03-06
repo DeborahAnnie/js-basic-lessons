@@ -152,7 +152,6 @@ form.error small {
 		transform: translateX(0);
 	}
 }
-
 @keyframes comeinright {
 	to {
 		opacity: 1;

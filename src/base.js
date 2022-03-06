@@ -4,7 +4,6 @@ const email = document.getElementById('email')
 form.addEventListener('submit', e => {
   e.preventDefault()
   const emailVal = email.value
-
   // check if it is a valid email
   if (!validateEmail(emailVal)) {
     form.classList.add('error')
