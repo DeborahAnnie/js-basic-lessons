@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+    <script src="demoa.js?v=2"></script>
+</head>
+
+<body>
+    <p>
+        <input type="button" value="ok" onclick="add()">
+        <label for="firstvalue">X:</label>
+        <input id="firstvalue" type="text" placeholder="Enter a number" />
+        <label for="secondvalue">Y:</label>
+        <input id="secondvalue" type="text" placeholder="Enter a number" />
+        <input type="button" value="+" onclick="sum()" />
+        <input type="button" value="add again" onclick="add(6,8)" />
+        <input type="button" value="adding again"
+            onclick="addagain(document.getElementById('firstvalue').value,document.getElementById('secondvalue').value)" />
+    </p>
+    </p>
+    <div id="result"></div>
+    <p>
+    <p>
+        <input type="button" value="Promblem1" onclick="problem1()" />
+    </p>
+
+    <div>
+        <div id="result"></div>
+    </div>
+
+    <p>
+        <input type="button" value="Promblem2" onclick="problem2()" />
+    </p>
+    <p>
+        <input type="button" value="Promblem3" onclick="problem3()" />
+    </p>
+    <p>
+        <input type="button" value="Promblem4" onclick="printdigits()" />
+    </p>
+    <label for="fvalue">A:</label>
+    <input id="fvalue" type="text" placeholder="Enter a number" />
+    <input type="button" value="Promblem5" onclick="printdigits1(document.getElementById('fvalue').value)">
+    <div id="digits"></div>
+</body>
+
+</html>
