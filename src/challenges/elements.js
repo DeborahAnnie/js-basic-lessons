@@ -1,7 +1,5 @@
 import { setcurrencies } from "./handlers.js";
 import { calculate } from "./money.js";
-
-
 function setmoney() {
     setcurrencies();
 }

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="report.css">
+    <title>Covid Report</title>
+</head>
+
+<body>
+    <section class="report1">
+        <header>
+            <h1> RT-PCR Report</h1>
+        </header>
+        <form name="myForm">
+            <div class="form1">
+                <label for=pname>
+                    <h3>Person Name</h3>
+                </label>
+                <input type="text" id="pname" name="pname" placeholder="Enter Your name">
+            </div>
+            <br>
+            <div class="form1">
+                <label for="aadhar">
+                    <h3>Aadhar Number</h3>
+                </label>
+                <input type="text" id="aadhar" name="aadhar" placeholder="Format: xxxx xxxx xxxx"><br>
+            </div>
+            <br>
+
+            <div class="form1">
+                <label for="dob">
+                    <h3>Date Of Birth</h3>
+                </label>
+                <input type="date" id="dob" name="dob"><br>
+            </div>
+            <br>
+            <div class="form1">
+                <label>
+                    <h3>City</h3>
+                </label>
+                <select name="city" id="city" class="city">
+                </select>
+            </div><br>
+
+            <div class="form1">
+                <label>
+                    <h3>Date Of Test</h3>
+                </label>
+                <input type="date" id="dot" name="dot"><br>
+            </div><br>
+
+            <div class="form1">
+                <label for="time">
+                    <h3>Time Of Test</h3>
+                </label>
+                <input type="time" id="tot" name="tot"><br>
+            </div>
+            <br>
+
+            <div class="form1">
+                <label for="result">
+                    <h3>Result</h3>
+                </label>
+                <input type="radio" id="rad-btn" name="radio">
+                <label for="result">Positive</label><br>
+                <input type="radio" id="rad-btn" name="radio">
+                <label for="resukt">Negative</label><br>
+            </div>
+            <br>
+
+            <div class="form1">
+                <label for=labname>
+                    <h3>Lab Name</h3>
+                </label>
+                <input type="text" id="lname" name="lname" placeholder="Enter the lab name"><br>
+            </div>
+            <br>
+
+            <div class="form1">
+                <label for="repnum">
+                    <h3>Report Number</h3>
+                </label>
+                <input type="number" id="repnum" name="repnum" placeholder="Enter your report number"><br>
+            </div>
+            <br>
+
+            <div class="form1">
+                <label>
+                    <h3>Gender</h3>
+                </label>
+                <select name="gender" id="gender">
+                </select>
+            </div><br>
+            <div class="form1">
+                <button id="btn">Submit</button>
+            </div>
+        </form>
+    </section>
+    <script type="text/javascript" src="./city.js"></script>
+</body>
+
+</html>

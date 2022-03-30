@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./currency.css">
+    <link rel="stylesheet" href="currency.css">
     <title>Currency Converter</title>
 </head>
 
@@ -13,19 +13,21 @@
     <div class="container">
         <form name="myForm">
             <div class="gridcontainer">
-                <div class="coloumn">
+                <div class="column">
                     <input type="number" name="inputval" id="inputvalue">
                 </div>
-                <div class="coloumn">
+                <div class="column">
                     <select name="currency" class="fromcurrency" id="money" onmouseout="this.size=1;">
-
+                        <option>Select a currency</option>
                     </select>
                 </div>
-                <div class="coloumn">
+                <div class="column">
                     <h3>in</h3>
                 </div>
-                <div class="coloumn">
-                    <select name="toconversion" class="showitem" id="toconversion" onmouseout="this.size=1;"></select>
+                <div class="column">
+                    <select name="toconversion" class="showitem" id="toconversion" onmouseout="this.size=1;">
+                        <option>Select a currency</option>
+                    </select>
                 </div>
                 <div class="in">
                     <h3>is</h3>
