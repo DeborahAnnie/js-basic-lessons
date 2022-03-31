@@ -1,67 +1,141 @@
 const cities = {
-Select: 'Your City',
-TN1 :'Ariyalur',
-TN2 :'Chengalpattu',
-TN3 : 'Chennai',
-TN4 :'Coimbatore',
-TN5:'Cuddalore',
-TN6:'Dharmapuri',
-TN7:'Dindigul',
-TN8:'Erode',
-TN9:'Kallakurichi',
-TN10:'Kanchipuram',
-TN11:'Kanyakumari',
-TN12:'Karur',
-TN13:'Krishnagiri',
-TN14:'Madurai',
-TN15:'Nagapattinam',
-TN16:'Namakkal',
-TN17:'Nilgiris',
-TN18:'Perambalur',
-TN19:'Pudukkottai',
-TN20:'Ramanathapuram',
-TN21:'Ranipet',
-TN22:'Salem',
-TN23:'Sivaganga',
-TN24:'Tenkasi',
-TN25:'Thanjavur',
-TN26:'Theni',
-TN27:'Thoothukudi',
-TN28:'Tiruchirappalli',
-TN29:'Tirunelveli',
-TN30:'Tirupathur',
-TN31:'Tiruppur',
-TN32:'Tiruvallur',
-TN33:'Tiruvannamalai',
-TN34:'Tiruvarur',
-TN35:'Vellore',
-TN36:'Viluppuram',
-TN37:'Virudhunagar'
-}
+  Select: "Your City",
+  Ariyalur: "",
+  Chengalpattu: "",
+  Chennai: "",
+  Coimbatore: "",
+  Cuddalore: "",
+  Dharmapuri: "",
+  Dindigul: "",
+  Erode: "",
+  Kallakurichi: "",
+  Kanchipuram: "",
+  Kanyakumari: "",
+  Karur: "",
+  Krishnagiri: "",
+  Madurai: "",
+  Nagapattinam: "",
+  Namakkal: "",
+  Nilgiris: "",
+  Perambalur: "",
+  Pudukkottai: "",
+  Ramanathapuram: "",
+  Ranipet: "",
+  Salem: "",
+  Sivagangai: "",
+  Tenkasi: "",
+  Thanjavur: "",
+  Theni: "",
+  Thoothukudi: "",
+  Tiruchirappalli: "",
+  Tirunelveli: "",
+  Tirupathur: "",
+  Tiruppur: "",
+  Tiruvallur: "",
+  Tiruvannamalai: "",
+  Tiruvarur: "",
+  Vellore: "",
+  Viluppuram: "",
+  Virudhunagar: "",
+};
 const city = document.getElementById("city");
 city.innerHTML = generateOptions(cities);
 function generateOptions(data) {
-    return Object.entries(data)
-        .map (
-            ([code, city]) =>
-            `<option value="${code}">${code == 'TN1' ? " " : code}  ${city}</option>`
-        )
-        .join(" ");
-    }
+  return Object.entries(data)
+    .map(
+      ([code, city]) =>
+        `<option value="${code}">${
+          code == "TN1" ? " " : code
+        }  ${city}</option>`
+    )
+    .join(" ");
+}
 
-    const gender = {
-        You :'Choose',
-        M: 'Male',
-        F: 'Female',
-        O: 'Other'
+const gender = {
+  You: "Choose",
+  Male: "",
+  Female: "",
+  Other: "",
+};
+const gend = document.getElementById("gender");
+gend.innerHTML = generateOptions(gender);
+function generateOptions(data) {
+  return Object.entries(data)
+    .map(
+      ([code, city]) =>
+        `<option value="${code}">${
+          code == "You" ? " " : code
+        }  ${city}</option>`
+    )
+    .join(" ");
+}
+function result() {
+  radio = document.getElementById("rad-btn").value;
+}
+function result1() {
+  radio = document.getElementById("rad-btn1").value;
+}
+document.getElementById("data").style.display = "block";
+document.getElementById("submit").onclick = function () {
+  var table = document.getElementById("data");
+  var row = table.insertRow(-1);
+  var personName = row.insertCell(0);
+  var aadhar = row.insertCell(1);
+  var dob = row.insertCell(2);
+  var city = row.insertCell(3);
+  var dot = row.insertCell(4);
+  var tot = row.insertCell(5);
+  var res = row.insertCell(6);
+  var labName = row.insertCell(7);
+  var reportNo = row.insertCell(8);
+  var gender = row.insertCell(9);
+  personName.innerHTML = document.getElementById("pname").value;
+  aadhar.innerHTML = document.getElementById("aadhar").value;
+  dob.innerHTML = document.getElementById("dob").value;
+  city.innerHTML = document.getElementById("city").value;
+  dot.innerHTML = document.getElementById("dot").value;
+  tot.innerHTML = document.getElementById("tot").value;
+  res.innerHTML = radio;
+  labName.innerHTML = document.getElementById("lname").value;
+  reportNo.innerHTML = document.getElementById("repnum").value;
+  gender.innerHTML = document.getElementById("gender").value;
+  return false;
+};
+const btn = document.getElementById("submit");
+
+btn.addEventListener("click", function handleClick(event) {
+  event.preventDefault();
+
+  const inputs = document.querySelectorAll(
+    "#pname, #aadhar, #dob, #city, #dot, #tot,#lname, #repnum, #gender"
+  );
+
+  inputs.forEach((input) => {
+    input.value = "";
+  });
+});
+
+function doSearch() {
+  var searchText = document.getElementById("searchTerm").value;
+  var targetTable = document.getElementById("data");
+  var targetTableColCount;
+
+  for (var rowIndex = 0; rowIndex < targetTable.rows.length; rowIndex++) {
+    var rowData = "";
+
+    if (rowIndex == 0) {
+      targetTableColCount = targetTable.rows.item(rowIndex).cells.length;
+      continue; //do not execute further code for header row.
     }
-    const gend =document.getElementById('gender');
-    gend.innerHTML = generateOptions(gender);
-    function generateOptions(data) {
-        return Object.entries(data)
-        .map (
-            ([code, city]) =>
-            `<option value="${code}">${code == 'You' ? " " : code}  ${city}</option>`
-        )
-        .join(" ");
-    }
+    var colIndex = 1;
+
+    var cellText = "";
+    cellText = targetTable.rows.item(rowIndex).cells.item(colIndex).textContent;
+
+    rowData += cellText;
+
+    if (rowData.indexOf(searchText) == -1)
+      targetTable.rows.item(rowIndex).style.display = "none";
+    else targetTable.rows.item(rowIndex).style.display = "table-row";
+  }
+}

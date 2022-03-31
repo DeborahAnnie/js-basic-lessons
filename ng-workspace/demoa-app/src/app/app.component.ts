@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'demoa-app';
+  location = 'Madurai';
+
+  onBoxValuechange(paramData: any) {
+    console.log("app component: " + paramData.value);
+  }
 }
 // @Component({
 //   selector: 'app-root',

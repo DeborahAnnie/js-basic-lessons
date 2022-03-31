@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-boxa',
@@ -6,17 +6,23 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./boxa.component.css']
 })
 export class BoxaComponent implements OnInit {
-  
-  labelValue: any;
+  @Input()
+  labelValue: any = 'City';
+  @Input()
   data: any;
   counter = 0;
   
+  @Output()
+  onBoxDataChange: EventEmitter<any> = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
   }
-  // onchange(event: { target: { value: any; }; }) {
-  //   this.data=event.target.value;
-  // }
+onchange(event: Event) {
+  console.log(this.counter)
+   this.data=(event.target as HTMLInputElement).value;
+  //  this.onBoxDataChange.emit({event});
+   this.onBoxDataChange.emit({value: this.data});
 
+  }
 }
