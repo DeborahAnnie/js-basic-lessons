@@ -1,5 +1,6 @@
+import { radio } from "./radio";
 export var submit = document.getElementById("submit");
-submit.addEventListener("click", function doSubmit() {
+submit.addEventListener("click", function () {
   var table = document.getElementById("data");
   var row = table.insertRow(-1);
   var personName = row.insertCell(0);

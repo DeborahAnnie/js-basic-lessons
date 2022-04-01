@@ -64,4 +64,15 @@ table,th,tr,td{
 th{
   width: 300px;
 }
-
+#search1 {
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  padding: 5px;
+  right: 70%;
+}
+#search1:hover{
+  background-color: transparent;
+  color: white;
+  transition: 0.3s;
+}
