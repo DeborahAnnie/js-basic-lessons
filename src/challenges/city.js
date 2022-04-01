@@ -101,6 +101,8 @@ document.getElementById("submit").onclick = function () {
   gender.innerHTML = document.getElementById("gender").value;
   return false;
 };
+
+
 const btn = document.getElementById("submit");
 
 btn.addEventListener("click", function handleClick(event) {
