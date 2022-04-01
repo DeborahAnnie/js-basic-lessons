@@ -1,4 +1,4 @@
-export const cities = {
+const cities = {
   Select: "Your City",
   Ariyalur: "",
   Chengalpattu: "",
