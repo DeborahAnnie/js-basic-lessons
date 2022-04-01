@@ -20,17 +20,17 @@ btn.addEventListener("click", function handleClick(event) {
 });
 function radioButton() {
   result();
-}
+};
 radioButton();
 function radioButton1() {
   result1();
-}
+};
 radioButton1();
 function searchCall() {
-  doSearch();
-}
+    doSearch();
+};
 searchCall();
 function optionDisplay() {
   generateOptions(data);
-}
+};
 optionDisplay();
