@@ -48,13 +48,13 @@ function generateOptions(data) {
     .map(
       ([code, city]) =>
         `<option value="${code}">${
-          code == "OPTION" ? " " : code
+          code == "" ? " " : code
         }  ${city}</option>`
     )
     .join("");
 }
 const gender = {
-  You: "Choose",
+  Choose: "",
   Male: "",
   Female: "",
   Other: "",

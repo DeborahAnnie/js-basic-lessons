@@ -1,4 +1,4 @@
-export var search = document.getElementById("search");
+export var search = document.getElementById("search1");
 search.addEventListener("click", function doSearch() {
   var searchText = document.getElementById("searchTerm").value;
   var targetTable = document.getElementById("data");
