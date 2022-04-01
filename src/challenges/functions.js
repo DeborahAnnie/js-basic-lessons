@@ -1,11 +1,17 @@
+import { cities } from "./city";
+import { gender } from "./gender";
+
 export function result() {
     radio = document.getElementById("rad-btn").value;
   }
 export function result1() {
     radio = document.getElementById("rad-btn1").value;
   }
-  document.getElementById("data").style.display = "block";
-  document.getElementById("submit").onclick = function () {
+  gender();
+  cities();
+  export function final{
+   document.getElementById("data").style.display = "block";
+   document.getElementById("submit").addEventListener = function () {
     var table = document.getElementById("data");
     var row = table.insertRow(-1);
     var personName = row.insertCell(0);
@@ -43,4 +49,4 @@ export function result1() {
       input.value = "";
     });
   });
-  
+}

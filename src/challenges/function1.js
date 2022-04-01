@@ -1,3 +1,12 @@
+import { cities } from "./city";
+import { result, result1 } from "./functions";
+import { gender } from "./gender";
+import { final } from "./functions";
+gender()
+cities()
+result() 
+result1()
+
 export function doSearch() {
     var searchText = document.getElementById("searchTerm").value;
     var targetTable = document.getElementById("data");
