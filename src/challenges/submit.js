@@ -1,4 +1,4 @@
-import { radio } from "./radio";
+// import { radio } from "./radio";
 export var submit = document.getElementById("submit");
 submit.addEventListener("click", function () {
   var table = document.getElementById("data");
