@@ -1,0 +1,163 @@
+<h1>RT-PCR Report</h1>
+<section>
+    <form name="reportForm" #customerFormGroup="ngForm" (submit)="saveCustomer(customerFormGroup)">
+        <div class="form-group" [class.has-error]="firstNameFormControl.invalid && firstNameFormControl.touched">
+            <label for=pname>
+                <h3>Person Name</h3>
+            </label>
+            <input class=form-control type="text" id="pname" name="pname" placeholder="Enter Your name"
+                [ngModel]="customerModel.firstName" required minlength="3" #firstNameFormControl="ngModel">
+        </div>
+        <br>
+        <div class="help-block" *ngIf="firstNameFormControl.invalid && firstNameFormControl.touched">
+            <span *ngIf="firstNameFormControl.errors?.['required']">
+                <mark> Name is mandatory!</mark>
+            </span>
+            <span *ngIf="firstNameFormControl.errors?.['minlength']">
+                <mark> Name must be more than atleast 3 characters </mark>
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label for="aadhar">
+                <h3>Aadhar Number</h3>
+            </label>
+            <input class=form-control type="text" id="aadhar" name="aadhar" placeholder="Format: xxxx xxxx xxxx"
+                [ngModel]="customerModel.aadharNum" required minlength="12" #aadharNumFormControl="ngModel"><br>
+        </div>
+        <br>
+        <div class="help-block" *ngIf="aadharNumFormControl.invalid && aadharNumFormControl.touched">
+            <span *ngIf="aadharNumFormControl.errors?.['required']">
+                <mark> Aadhar Number Required!</mark>
+            </span>
+            <span *ngIf="aadharNumFormControl.errors?.['minlength']">
+                <mark>Should be 12 numbers </mark>
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label for="dob">
+                <h3>Date Of Birth</h3>
+            </label>
+        </div>
+        <input class=form-control type="date" id="dob" name="dob" [ngModel]="customerModel.aadharNum" required
+            #dobFormControl="ngModel"><br>
+        <div class="help-block" *ngIf="dobFormControl.invalid && dobFormControl.touched">
+            <span *ngIf="dobFormControl.errors?.['required']">
+                <mark> Date Of Birth Required!</mark>
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label>
+                <h3>City</h3>
+            </label>
+            <select name="city" id="city" class="city">
+            </select>
+        </div><br>
+
+        <div class="form-group">
+            <label>
+                <h3>Date Of Test</h3>
+            </label>
+            <input class=form-control type="date" id="dot" name="dot" [ngModel]="customerModel.dot" required
+                #dotFormControl="ngModel">
+        </div><br>
+        <div class="help-block" *ngIf="dotFormControl.invalid && dotFormControl.touched">
+            <span *ngIf="dotFormControl.errors?.['required']">
+                <mark> Date Of Test Required!</mark>
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label for="time">
+                <h3>Time Of Test</h3>
+            </label>
+            <input class=form-control type="time" id="tot" name="tot" [ngModel]="customerModel.tot" required
+                #totFormControl="ngModel"><br>
+        </div>
+        <br>
+        <div class="help-block" *ngIf="totFormControl.invalid && totFormControl.touched">
+            <span *ngIf="totFormControl.errors?.['required']">
+                <mark> Time Of Test Required!</mark>
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label for="result">
+                <h3>Result</h3>
+            </label>
+            <input class=form-control type="radio" id="rad-btn" name="radio" value="Positive">
+            <label for="result">Positive</label><br>
+            <input class=form-control type="radio" id="rad-btn1" name="radio" value="Negative">
+            <label for="result">Negative</label><br>
+        </div>
+        <br>
+
+        <div class="form-group">
+            <label for=labname>
+                <h3>Lab Name</h3>
+            </label>
+            <input class=form-control type="text" id="lname" name="lname" placeholder="Enter the lab name"
+                [ngModel]="customerModel.lName" required #lNameFormControl="ngModel"><br>
+        </div>
+        <br>
+        <div class="help-block" *ngIf="lNameFormControl.invalid && lNameFormControl.touched">
+            <span *ngIf="lNameFormControl.errors?.['required']">
+                <mark> Lab Name Required!</mark>
+            </span>
+        </div>
+
+
+        <div class="form-group">
+            <label for="repnum">
+                <h3>Report Number</h3>
+            </label>
+            <input class=form-control type="text" id="repnum" name="repnum" placeholder="Enter your report number"
+                [ngModel]="customerModel.repNo" required #repNoFormControl="ngModel"><br>
+        </div>
+        <br>
+        <div class="help-block" *ngIf="repNoFormControl.invalid && repNoFormControl.touched">
+            <span *ngIf="repNoFormControl.errors?.['required']">
+                <mark> Report Number Required!</mark>
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label>
+                <h3>Gender</h3>
+            </label>
+            <select name="gender" id="gender">
+            </select>
+        </div><br>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit" id="submit">Submit</button>
+        </div>
+    </form>
+</section>
+<section>
+    <table id="data">
+        <br> <br> <br>
+        <tr>
+            <th>Person Name</th>
+            <th>Aadhar Number</th>
+            <th>Date Of Birth</th>
+            <th>City</th>
+            <th>Date Of Test</th>
+            <th>Time Of Test</th>
+            <th>Result</th>
+            <th>Lab Name</th>
+            <th> Report Number</th>
+            <th> Gender</th>
+        </tr>
+    </table>
+</section>
+<section class="report3">
+    <div>
+        <label for="valueTosearch" id="search">
+            <h5><i>Search :</i></h5>
+        </label>
+        <input class=form-control id="searchTerm" class="form-group" placeholder="Enter Aadhar Card Number">
+        <button type="submit" value="search" id="search1">Search</button>
+    </div>
+</section>
