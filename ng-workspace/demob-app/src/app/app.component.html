@@ -82,6 +82,7 @@
       </div>
       <div class="error">
         <small class="text-danger" *ngIf="fg.controls['report'].invalid && fg.controls['report'].touched"><mark>Report
+            Number
             is
             Reqiured</mark></small>
       </div>
@@ -101,9 +102,7 @@
         <button (click)="add()" [disabled]="!fg.valid">Submit</button>
       </div>
     </form>
-    <div>
-      <h2>DATA BASE</h2>
-    </div>
+
     <div class="tab">
       <table id="table">
         <tr>
@@ -121,7 +120,6 @@
           <td>
             {{ value.dob }}
           </td>
-
           <td>
             {{ value.city }}
           </td>
@@ -143,7 +141,6 @@
           <td>
             {{ value.result }}
           </td>
-
         </tr>
       </table>
     </div>

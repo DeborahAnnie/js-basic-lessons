@@ -42,15 +42,16 @@ export class AppComponent {
       this.fg.reset();
       (<HTMLDivElement>document.getElementById('msg')).style.display = 'none';
     }
-    // else{
-    //   alert("*************Please, must fill the empty fields in the form!!!**********");
-    // }
   }
   search() {
     console.log((<HTMLDivElement>document.getElementById('find')).innerHTML);
     if ((<HTMLDivElement>document.getElementById('find')).innerText == '') {
       (<HTMLDivElement>document.getElementById('msg')).innerText =
-        '***********THERE IS NO RECORD FOUND AND FIELD WAS EMPTY!!!*********';
+        'Enter the Aadhar Number to find!';
+      (<HTMLDivElement>document.getElementById('msg')).style.fontWeight = '700';
+      (<HTMLDivElement>document.getElementById('msg')).style.backgroundColor =
+        'grey';
+      (<HTMLDivElement>document.getElementById('msg')).style.padding = '10px';
     }
     this.input = (<HTMLInputElement>document.getElementById('find')).value;
     this.store.forEach((element: any) => {
