@@ -116,14 +116,12 @@
             {{ value.fname }}
           </td>
           <td>
-            {{ value.lname }}
+            {{ value.aadhar }}
           </td>
           <td>
             {{ value.dob }}
           </td>
-          <td>
-            {{ value.gender }}
-          </td>
+
           <td>
             {{ value.city }}
           </td>
@@ -134,6 +132,9 @@
             {{ value.time }}
           </td>
           <td>
+            {{ value.gender }}
+          </td>
+          <td>
             {{ value.lab }}
           </td>
           <td>
@@ -142,14 +143,12 @@
           <td>
             {{ value.result }}
           </td>
-          <td>
-            {{ value.aadhar }}
-          </td>
+
         </tr>
       </table>
     </div>
     <div class="search">
-      <input type="text" id="find" (keyup)="removefield()" placeholder="Enter name to search">
+      <input type="text" id="find" (keyup)="removefield()" placeholder="Enter aadhar number to search">
       <input type="submit" (click)="search()" id="submit">
       <div id="msg"></div>
     </div>
@@ -165,13 +164,10 @@
             {{ value.fname }}
           </td>
           <td>
-            {{ value.lname }}
+            {{ value.aadhar }}
           </td>
           <td>
             {{ value.dob }}
-          </td>
-          <td>
-            {{ value.gender }}
           </td>
           <td>
             {{ value.city }}
@@ -183,6 +179,9 @@
             {{ value.time }}
           </td>
           <td>
+            {{ value.gender }}
+          </td>
+          <td>
             {{ value.lab }}
           </td>
           <td>
@@ -191,11 +190,9 @@
           <td>
             {{ value.result }}
           </td>
-          <td>
-            {{ value.aadhar }}
-          </td>
+
         </tr>
       </table>
     </div>
   </div>
-</body> 
+</body>
