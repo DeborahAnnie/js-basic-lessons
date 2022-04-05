@@ -1,10 +1,10 @@
 <body>
   <div class="container">
-    <h1>RT-PCR REGISTRATION FORM</h1>
+    <h1><i>RT-PCR REPORT</i></h1>
     <form class="tab tab-container" [formGroup]="fg">
       <div class="field">
         <label for="fname">Name :</label>
-        <input type="text" placeholder="enter your name" name="fname" id="fname" formControlName="fname" required>
+        <input type="text" placeholder="Enter your name" name="fname" id="fname" formControlName="fname" required>
       </div>
       <div class="error">
         <small class="text-danger" *ngIf="fg.controls['fname'].invalid && fg.controls['fname'].touched"><mark>Name is
@@ -18,7 +18,7 @@
       <div class="error">
         <small class="text-danger" *ngIf="fg.controls['aadhar'].invalid && fg.controls['aadhar'].touched"><mark>Aadhar
             Is
-            Reqiured</mark></small>
+            Reqiured!</mark></small>
       </div>
       <div class="field">
         <label for="date-of-birth">Date Of Birth :</label>
@@ -32,7 +32,7 @@
 
       <div class="field">
         <label for="city">City :</label>
-        <input type="text" placeholder="enter your city" name="city" id="city" formControlName="city" required>
+        <input type="text" placeholder="Enter your city" name="city" id="city" formControlName="city" required>
       </div>
       <div class="error">
         <small class="text-danger" *ngIf="fg.controls['city'].invalid && fg.controls['city'].touched"><mark>City Name is
@@ -58,17 +58,16 @@
       </div>
       <div class="field" id="check-gen">
         <label for="gender">Gender :</label>
-        <input type="text" placeholder="enter your gender" name="gender" id="gender" formControlName="gender" required>
+        <input type="text" placeholder="Enter your gender" name="gender" id="gender" formControlName="gender" required>
       </div>
       <div class="error">
-        <small class="text-danger" *ngIf="fg.controls['gender'].invalid && fg.controls['gender'].touched"><mark>Enter
-            Your
-            Gender!</mark>
+        <small class="text-danger" *ngIf="fg.controls['gender'].invalid && fg.controls['gender'].touched"><mark>This
+            field is required!</mark>
         </small>
       </div>
       <div class="field">
         <label for="lab">Lab Name :</label>
-        <input type="text" placeholder="enter your lab name" name="lab" id="lab" formControlName="lab" required>
+        <input type="text" placeholder="Enter your lab name" name="lab" id="lab" formControlName="lab" required>
       </div>
       <div class="error">
         <small class="text-danger" *ngIf="fg.controls['lab'].invalid && fg.controls['lab'].touched"><mark>Lab Name is
@@ -77,7 +76,7 @@
 
       <div class="field">
         <label for="report">Report Number :</label>
-        <input type="text" placeholder="enter your report number" name="report" id="report" formControlName="report"
+        <input type="text" placeholder="Enter your report number" name="report" id="report" formControlName="report"
           required>
       </div>
       <div class="error">
@@ -88,7 +87,7 @@
       </div>
       <div class="field">
         <label for="result">Result :</label>
-        <input type="text" name="result" placeholder="enter positive or negative" id="result" formControlName="result"
+        <input type="text" name="result" placeholder="Enter positive or negative" id="result" formControlName="result"
           required>
       </div>
       <div class="error">

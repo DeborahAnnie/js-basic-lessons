@@ -48,9 +48,9 @@ export class AppComponent {
     if ((<HTMLDivElement>document.getElementById('find')).innerText == '') {
       (<HTMLDivElement>document.getElementById('msg')).innerText =
         'Enter the Aadhar Number to find!';
-      (<HTMLDivElement>document.getElementById('msg')).style.fontWeight = '700';
+      (<HTMLDivElement>document.getElementById('msg')).style.fontWeight = '600';
       (<HTMLDivElement>document.getElementById('msg')).style.backgroundColor =
-        'grey';
+        'lightgrey';
       (<HTMLDivElement>document.getElementById('msg')).style.padding = '10px';
     }
     this.input = (<HTMLInputElement>document.getElementById('find')).value;
