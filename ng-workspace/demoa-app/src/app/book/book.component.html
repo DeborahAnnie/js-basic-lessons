@@ -1,7 +1,5 @@
 <div>
-    <h4>Book Name: {{book.name | uppercase}} - <small>{{book.publishdate
-            |
-            date:' dd MMM YYYY'}} </small></h4>
+    <h4>Book Name: {{book.name | uppercase}} - <small>{{book.publishdate | date:' dd MMM YYYY'}} </small></h4>
     <h5>Original Price: {{book.price | currency: 'INR':true}}</h5>
     <h4>Discount: {{book.discount}}</h4>
     <h4>Discounted Price: {{book.price | priceDiscount:book.discount | currency: 'INR':true}}</h4>

@@ -1,0 +1,6 @@
+<h2 class="text-danger">parent works!</h2>
+<button class="btn btn-primary" (click)="toggleOf()"> Click Toggle Child</button>
+<input type="text" [(ngModel)]="Name">
+<app-child *ngIf="isChild" [Name]="Name">
+    <h3 #projectedContent>Life Cycle Hooks</h3>
+</app-child>
